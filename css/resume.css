@@ -46,7 +46,7 @@ h2 {
 }
 
 .list-social-icons a:hover {
-  color: rgb(21, 102, 253);
+  color: rgb(255, 136, 0);
 }
 
 .list-social-icons a .fa-lg {
@@ -58,7 +58,7 @@ h2 {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: rgba(85, 115, 252, 0.932);
+  color: rgb(252, 143, 0);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -133,17 +133,21 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: rgb(42, 80, 253) !important;
+  background-color: rgb(19, 113, 255) !important;
+}
+
+.title-text {
+  color: rgb(252, 143, 0) !important;  
 }
 
 .text-primary {
-  color: rgb(42, 80, 253) !important;
+  color: rgb(19, 113, 255) !important;
 }
 
 a {
-  color: rgba(85, 115, 252, 0.932);
+  color:  rgb(19, 113, 255);
 }
 
 a:hover, a:focus, a:active {
-  color: rgba(85, 115, 252, 0.932);
+  color:  rgb(252, 143, 0));
 }
