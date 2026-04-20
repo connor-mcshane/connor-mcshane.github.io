@@ -7,8 +7,10 @@ import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import profileImage from "@/assets/images/profile-image.png";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
@@ -70,11 +72,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <div class="w-full md:w-2/5 flex justify-center md:justify-end">
           <div class="relative max-w-[320px] w-full aspect-[4/5] rounded-3xl overflow-hidden border-4 border-muted/50 shadow-2xl rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 group">
             <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-            {/* Using fireship reference as a placeholder profile image for now */}
-            <img 
-              src="/images/profile-image.png" 
-              alt="Connor McShane" 
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            <Image
+              src={profileImage}
+              alt="Connor McShane"
+              widths={[320, 480, 640]}
+              sizes="(max-width: 768px) 80vw, 320px"
+              loading="eager"
+              class="w-full h-full object-cover transition-all duration-700"
             />
           </div>
         </div>
