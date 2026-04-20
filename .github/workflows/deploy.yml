@@ -32,7 +32,16 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          npm config set fetch-timeout 600000
+          for i in 1 2 3; do
+            npm ci && break
+            echo "npm ci failed (attempt $i), retrying in 10s..."
+            sleep 10
+          done
       - name: Build with Astro
         run: npm run build
       - name: Upload artifact

@@ -9,7 +9,7 @@ tags:
   - Data Engineering
   - Streamlit
   - Finance
-heroImage: "../../assets/returnstacking/image.png"
+heroImage: "../../assets/images/returnstacking/image.png"
 description: "Playing around with Return Stacking portfolios in Streamlit"
 ---
 
@@ -126,6 +126,6 @@ The dashboard now lets you pick preset portfolios or build custom ones, compare 
 
 In hindsight, I would have validated against Portfolio Visualizer on day one instead of building features on top of bad data for weeks. The dividend issue was the whole gap and it would have taken 30 minutes to catch.
 
-![alt text](../../assets/returnstacking/image.png)
+![Return stacking backtesting dashboard in Streamlit showing portfolio comparison charts and performance metrics](../../assets/images/returnstacking/image.png)
 
 *Code is on [GitHub](https://github.com/connor-mcshane/return-stacking-backtesting/). Live demo is on [Streamlit Cloud](https://return-stacking-backtesting-adx5rgqcjrwugekhflyjhr.streamlit.app/).*
