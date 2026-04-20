@@ -6,11 +6,11 @@
 :root,
 html[data-theme="light"],
 html[data-theme="dark"] {
-  --background: #111111; /* Very dark background */
-  --foreground: #e2e8f0; /* Light slate foreground */
-  --accent: #ff3e00; /* Fiery orange accent */
-  --muted: #1e293b; /* Muted slate background */
-  --border: #334155; /* Slate border */
+  --background: #191b20; /* Darker, slightly blue-tinted black like Fireship */
+  --foreground: #f8f8f8; /* Very white text */
+  --accent: #ff9100; /* Yellow-orange button color */
+  --muted: #2d313b; /* Slightly lighter background for cards/code */
+  --border: #2d313b; /* Border color matching muted */
 }
 
 @theme inline {

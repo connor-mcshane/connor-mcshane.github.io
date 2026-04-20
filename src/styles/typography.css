@@ -10,11 +10,11 @@
     h3,
     h4,
     th {
-      @apply mb-3 text-foreground;
+      @apply mb-3 text-foreground font-bold tracking-tight;
     }
 
     h3 {
-      @apply italic;
+      @apply not-italic;
     }
 
     p,
@@ -24,11 +24,11 @@
     figcaption,
     table,
     code {
-      @apply text-foreground;
+      @apply text-foreground/90;
     }
 
     a {
-      @apply wrap-break-word text-foreground decoration-dashed underline-offset-4 hover:text-accent focus-visible:no-underline;
+      @apply wrap-break-word text-blue-400 no-underline hover:text-accent transition-colors focus-visible:no-underline;
     }
 
     ul {

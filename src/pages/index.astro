@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -7,10 +6,10 @@ import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
-import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
+import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 
@@ -22,87 +21,108 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Connor McShane
-      </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
+    <section
+      id="hero"
+      class:list={[
+        "pt-16 pb-12 relative overflow-hidden",
+        "border-b border-border/50"
+      ]}
+    >
+      {/* Decorative gradient background blur */}
+      <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/10 blur-3xl opacity-50 z-0 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-red-500/10 blur-3xl opacity-50 z-0 pointer-events-none"></div>
+      
+      <div class="relative z-10 flex flex-col md:flex-row items-center gap-12 justify-between">
+        <div class="w-full md:w-3/5">
+          <h1 class="my-4 inline-block text-5xl font-black sm:my-8 sm:text-7xl text-white uppercase tracking-tighter drop-shadow-sm">
+            Connor <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-500">McShane</span>
+          </h1>
 
-      <p class="text-xl mb-4 text-gray-300">
-        Senior Data Engineer & Machine Learning Engineer based in London.
-      </p>
-      <p>
-        I specialize in Cloud Landing Zones, Modern Data Stacks, Backend APIs, and Machine Learning solutions. With over 7 years of experience, I build robust data pipelines, scalable ML systems, and cost-optimized cloud architectures on GCP.
-      </p>
-      <p class="mt-4">
-        Read my blog posts below or check out my
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent font-semibold"
-          href="/about"
-        >
-          experience
-        </LinkButton>.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="px-3 py-1 text-xs font-black uppercase tracking-widest bg-accent/20 text-accent rounded border border-accent/30">Data Engineer</span>
+            <span class="px-3 py-1 text-xs font-black uppercase tracking-widest bg-blue-500/20 text-blue-400 rounded border border-blue-500/30">ML Engineer</span>
+            <span class="px-3 py-1 text-xs font-black uppercase tracking-widest bg-green-500/20 text-green-400 rounded border border-green-500/30">GCP Certified x7</span>
           </div>
-        )
-      }
+
+          <p class="text-xl text-foreground/80 leading-relaxed max-w-2xl font-medium">
+            I specialize in <span class="text-white font-bold">Cloud Landing Zones</span>, <span class="text-white font-bold">Modern Data Stacks</span>, and <span class="text-white font-bold">Machine Learning solutions</span>. With over 7 years of experience, I build robust data pipelines and scalable ML systems on GCP.
+          </p>
+
+          <div class="mt-10 flex gap-4">
+            <LinkButton
+              class="bg-accent hover:bg-orange-400 text-black px-8 py-3 rounded-lg font-black uppercase tracking-widest transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.1)] hover:translate-x-[2px] hover:translate-y-[2px]"
+              href="/about"
+            >
+              View Experience
+            </LinkButton>
+          </div>
+          
+          {
+            // only display if at least one social link is enabled
+            SOCIALS.length > 0 && (
+              <div class="mt-12 flex max-sm:flex-col sm:items-center">
+                <Socials />
+              </div>
+            )
+          }
+        </div>
+        
+        <div class="w-full md:w-2/5 flex justify-center md:justify-end">
+          <div class="relative max-w-[320px] w-full aspect-[4/5] rounded-3xl overflow-hidden border-4 border-muted/50 shadow-2xl rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 group">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+            {/* Using fireship reference as a placeholder profile image for now */}
+            <img 
+              src="/images/profile-image.png" 
+              alt="Connor McShane" 
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     {
       featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-b border-border": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
+    <section
+      id="featured"
+      class:list={[
+        "pt-16 pb-12",
+        { "border-b border-border/50": recentPosts.length > 0 },
+      ]}
+    >
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-3xl font-black uppercase tracking-widest text-white drop-shadow-sm">Featured</h2>
+        <div class="h-[2px] bg-gradient-to-r from-yellow-500 to-transparent flex-grow rounded-full opacity-50"></div>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {featuredPosts.map(data => (
+          <Card variant="h3" {...data} />
+        ))}
+      </ul>
+    </section>
       )
     }
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
+    <section id="recent-posts" class="pt-16 pb-12">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-3xl font-black uppercase tracking-widest text-white drop-shadow-sm">Recent Posts</h2>
+        <div class="h-[2px] bg-gradient-to-r from-accent to-transparent flex-grow rounded-full opacity-50"></div>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {recentPosts.map(
+          (data, index) =>
+            index < SITE.postPerIndex && <Card variant="h3" {...data} />
+        )}
+      </ul>
+    </section>
       )
     }
 
-    <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
+    <div class="my-8 text-center mt-12">
+      <LinkButton href="/posts/" class="bg-muted/30 hover:bg-muted/50 text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest transition-all duration-200 border-2 border-border/50 hover:border-accent inline-flex items-center gap-2">
+        View All Posts
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>
