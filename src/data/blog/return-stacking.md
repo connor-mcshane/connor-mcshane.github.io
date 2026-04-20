@@ -122,9 +122,7 @@ It sounds crude, and it is. But the alternative was trusting that every data sou
 
 ---
 
-The dashboard now lets you pick preset portfolios or build custom ones, compare against benchmarks, and toggle rebalancing frequencies. Data refreshes daily via a GitHub Action that fetches, validates the data and commits to the repo (personal project don't shoot me :). The Streamlit app reads the parquet file over HTTPS.
-
-In hindsight, I would have validated against Portfolio Visualizer on day one instead of building features on top of bad data for weeks. The dividend issue was the whole gap and it would have taken 30 minutes to catch.
+The dashboard now lets you pick preset portfolios or build custom ones, compare against benchmarks, and toggle rebalancing frequencies. Data refreshes daily via a GitHub Action that fetches, validates the data and commits to the repo (personal project don't shoot me :). The Streamlit app reads the parquet file on bootup.
 
 ![Return stacking backtesting dashboard in Streamlit showing portfolio comparison charts and performance metrics](../../assets/images/returnstacking/image.png)
 
