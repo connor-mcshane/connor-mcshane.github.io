@@ -11,3 +11,4 @@ My day-to-day usually involves building end-to-end data systems—whether that's
 
 When I'm not building data pipelines, you'll usually find me out running, playing guitar, or drawing.
 
+**CV:** [View or download (PDF)](/cv.pdf)
