@@ -1,0 +1,176 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://www.linkedin.com/in/connor-mcshane/}{\Large Connor McShane - Lead Data Platform Engineer}} & Email : \href{mailto:c.o.mcshane@gmail.com}{c.o.mcshane@gmail.com}\\
+    \href{https://connor-mcshane.github.io}{https://connor-mcshane.github.io} \\
+  \href{https://www.linkedin.com/in/connor-mcshane/}{https://www.linkedin.com/in/connor-mcshane/} \\
+\end{tabular*}
+
+
+%-----------SUMMARY-----------------
+\section{Summary}
+Lead Data Platform Engineer with 7+ years' experience designing and operating scalable cloud-native data platforms. Proven success building production-grade Kubernetes infrastructure, Terraform IaC frameworks, CI/CD pipelines, and enterprise data tools that make data reliable, discoverable, and AI-enabled. Specialises in containerised workloads, automation, platform utilities, governance, observability, and agentic capabilities. Deep expertise in GCP with a track record of delivering self-service platforms that empower data scientists, analysts, and business users.
+
+%-----------SKILLS-----------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Technologies}{: Agentic Design, Terraform, GCP, Kubernetes (GKE), Python, SQL, DBT, Airflow, Apache Beam, , PySpark, FastAPI, Flask, AWS, Airbyte, Datahub, Gemini, Looker \& Looker Studio.}
+    }
+    \item{
+      \textbf{Concepts}{: Cloud-Native Platforms, Container Orchestration, Infrastructure as Code, CI/CD, Data Governance, Observability \& Metadata Catalogues, Enterprise Data Platforms, Streaming Pipelines, DevOps, AI/ML Pipelines, Backend Web Development.}
+    }
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Gumtree \textnormal{- Online Marketplace}}{London, UK}
+      {Lead Data Platform Engineer}{Dec 2022 -- Present}
+    \resumeItemListStart
+      \resumeItem{Agentic Workflow solutions}{Implemented custom prompt PR review agent with Gemini to improve code quality as well as an AI dashboard tool for analysts (in progress) to improve data insights and aggregate common queries and questions.}
+      \resumeItem{Data Warehouse Migration}{Led migration of the data warehouse from Databricks to BigQuery, improving performance and reducing operational complexity. Also implemented Kimball master data layer during the migration.}
+      \resumeItem{GCP Data Architecture}{Principal architect for GCP data projects, designing IAM policies and end-to-end ingestion, transformation, presentation layers and monitoring and alerting.}
+      \resumeItem{DBT Stack Implementation}{Built and deployed the full DBT platform stack (Airflow on Cloud Composer) using Terraform-managed infrastructure and CI/CD pipelines. Integrated Elementary for observability, anomaly detection, and freshness alerting.}
+      \resumeItem{Data Governance}{Designed and implemented enterprise data governance using GCP policy tags, column-level security, and Cloud DLP. Built custom automation service for regex-based policy tag propagation across datasets.}
+      \resumeItem{Open Source Tooling on Kubernetes}{Deployed and managed containerised open-source tools on GKE, including Airbyte (data ingestion) and Datahub (metadata catalogue and discovery platform).}
+      \resumeItem{Data Products}{Developed Data products such as Ad-counters (streaming event collection and visualisation) and Category Autocomplete search.}
+      \resumeItem{User Data Deletion Tool}{Developed an in-house Flask application that replaced a third-party solution, saving Gumtree \pounds100K annually.}
+      \resumeItem{BigQuery Cost Optimisation}{Designed and implemented BigQuery slot reservation architecture, delivering \pounds120K annual savings.}
+      \resumeItem{Team Development}{Mentored junior engineers and analysts and onboarded several teams with training on BigQuery, Looker Studio, DBT, and platform best practices.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Dojo \textnormal{- Payments Provider}}{London, UK}
+      {Senior Data Platform Engineer}{Mar 2021 -- Dec 2022}
+    \resumeItemListStart
+      \resumeItem{Data Mesh Tooling}{Designed and implemented a Data Mesh platform (DBT + Airflow stack) on GKE to support self-service analytics across five data domains and 50+ analysts.}
+      \resumeItem{Near Real-Time Customer Engagement}{Built platform integration connecting customer data models with Braze to enable near real-time personalised engagement in the Dojo app.}
+      \resumeItem{Embedded Analytics}{Developed and deployed a Looker Embed internal API, enabling internal applications to surface dynamic, user-facing data visualisations.}
+      \resumeItem{BigQuery Cost Optimisation}{Implemented BigQuery Flex slot allocation strategy, reducing query costs by 30--40\% and delivering \pounds300K annual savings.}
+      \resumeItem{Custom Data Pipelines}{Developed bespoke ingestion and transformation pipelines to streamline data movement and platform capabilities across the organisation.}
+    \resumeItemListEnd
+  
+    \resumeSubheading
+      {Jellyfish \textnormal{- Digital Agency}}{London, UK}
+      {Data Engineer}{Mar 2020 -- Mar 2021}
+        \resumeItemListStart
+          \resumeItem{SEO Analytics Products}{Led the development of Share of Demand and JIQ products, providing SEO insights to clients and enabling them to optimise marketing strategies.}
+          \resumeItem{Data Pipeline Development}{Designed and implemented Airflow data pipelines for multiple clients, improving data ingestion and processing efficiency.}
+          \resumeItem{Standardised Delivery Framework}{Created a standardised delivery model for Data Engineering projects in GCP from discovery to implementation, helping Jellyfish achieve GCP Data Analytics Specialization and open new revenue streams.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {GFT Group \textnormal{- Financial IT Consultancy} }{London, UK}
+      {Cloud Engineer}{Sep 2019 -- Mar 2020}
+        \resumeItemListStart
+          \resumeItem{Cloud Landing Zone}{Developer on Tranquillity Base, a GCP landing zone solution using Packer and Terraform enabling one-click deployment for cloud environments.}
+          \resumeItem{BigQuery Ingestion CI/CD}{Designed and implemented CI/CD pipelines for a BigQuery ingestion tool at HSBC, allowing internal business functions to create and manage data stacks with repeatability and efficiency.}
+          \resumeItem{Infrastructure Automation}{Created Jenkins pipelines to automate testing and deployment of infrastructure, improving reliability and reducing manual intervention.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {PA Consulting Group \textnormal{- Management Consultancy}}{London, UK}
+      {Analyst Consultant}{Apr 2018 -- Sep 2019}
+        \resumeItemListStart
+          \resumeItem{IoT Platform Development}{Lead GCP developer on a streaming IoT platform for a FTSE250 pest control company, creating Apache Beam pipelines to process data and provide real-time alerts.}
+          \resumeItem{API Development}{Developed REST APIs to access stored data across Cloud Spanner, Datastore, BigQuery.}
+            \resumeItem{Robotic Kinematic Arm Development}{ Created regression tests based on design requirements for Robotic Arm development for CMR Surgical}
+        \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------------
+\section{Certifications}
+  \resumeSubHeadingListStart
+   \item{\small{Google Professional Machine Learning Engineer}}
+    \item{\small{Google Professional Cloud Security Engineer}}
+    \item{\small{Google Professional Cloud Database Engineer}}
+    \item{\small{Google Professional Cloud Architect}}
+    \item{\small{Google Professional Cloud Developer}}
+    \item{\small{Google Professional Data Engineer}}
+    \item{\small{Google Associate Cloud Engineer}}
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of Western Australia}{Perth, Australia}
+      {Master of Electrical Engineering, High Distinction}{Jan 2015 -- Dec 2017}
+    \resumeSubheading
+      {The University of Western Australia}{Perth, Australia}
+      {Bachelor of Science (Software Engineering), High Distinction}{Jan 2012 -- Dec 2014}
+  \resumeSubHeadingListEnd
+
+
+\section{References}
+  \resumeSubHeadingListStart
+    \item{\small{Austin Chungath - Lead Data Engineer at Dojo - contact details supplied on request }}
+    \item{\small{Scott Corbett - Lead Data Engineer at Gumtree - contact details supplied on request }}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
