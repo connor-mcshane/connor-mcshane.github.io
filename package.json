@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "charts:housing": "node scripts/generate-housing-charts.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
